@@ -1,0 +1,36 @@
+.front{
+  display: none;
+}
+.content {
+  display: flex;
+}
+
+.header{
+  padding: 10px 22px 10px 22px;
+  background-color: brown;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.header .img-logo{
+  height: 53px;
+  width: 75px;
+    
+}
+.header .img-logo img {
+  width:100%;
+}
+
+.main {
+  margin-top: 80px;
+
+}
+
+.user {
+}
+  
