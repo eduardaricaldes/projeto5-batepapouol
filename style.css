@@ -1,6 +1,15 @@
-.body {
+body {
   font-size: 16px;
 }
+
+.diplay-none {
+  display: none !important;
+}
+
+.diplay-block {
+  display: block !important;
+}
+
 .front{
   display: none;
 }
@@ -64,6 +73,7 @@
 
 /* NAV */
 .navbar{
+  display: none;
   position: absolute;
   top: 0;
   display: flex;
