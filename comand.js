@@ -45,6 +45,7 @@ function messageMessage(from, to, text, type, time) {
 }
 
 const messages= document.querySelector('.messages');
+
 function dadosChegaram(resposta){
   const data = resposta.data;
   let html = '';
@@ -58,6 +59,14 @@ function dadosChegaram(resposta){
 
   messages.innerHTML = html;
 }
-const mensagens= [];
-const dados= axios.get('https://mock-api.driven.com.br/api/v6/uol/messages');
-dados.then(dadosChegaram);
+
+function app(){
+  const dados= axios.get('https://mock-api.driven.com.br/api/v6/uol/messages');
+  dados.then(dadosChegaram);
+}
+
+app();
+
+setInterval(()=>{
+  app();
+}, 3000)
