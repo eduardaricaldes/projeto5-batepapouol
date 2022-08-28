@@ -18,7 +18,7 @@ body {
 }
 
 .header{
-  padding: 10px 22px 10px 22px;
+  padding: 0 22px 0 22px;
   background-color: brown;
   display: flex;
   flex-direction: row;
@@ -28,12 +28,12 @@ body {
   top: 0;
   left: 0;
   right: 0;
+  height: 80px;
 }
 
 .header .img-logo{
   height: 53px;
   width: 75px;
-    
 }
 .header .img-logo img {
   width:100%;
