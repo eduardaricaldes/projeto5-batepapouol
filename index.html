@@ -38,9 +38,67 @@
         </div>
       </div>
       <div class="footer">
-        <input class="send-text" type="text" />
-        <img src="imagens/send.svg" />
+        <div class="write-text">
+          <input type="text" />
+          <img src="imagens/send.svg" onclick="send-text" />
+        </div>
       </div>
+      <aside class="navbar">
+        <nav class="nav">
+          <div class="sidebar">
+            <div class="list contact-list">
+              <div class="list-header">
+                Escolha um contato para enviar mensagem:
+              </div>
+              <div class="list-type">
+                <ion-icon name="people-sharp" class="icon"></ion-icon>
+                <span class="item-label">Todos</span>
+              </div>
+              <ul class="list-items">
+                <li class="item">
+                  <ion-icon
+                    name="person-circle-outline"
+                    class="icon"
+                  ></ion-icon>
+                  <span class="label username">João</span>
+                  <div class="active-item">
+                    <img src="imagens/check.svg" />
+                  </div>
+                </li>
+                <li class="item">
+                  <ion-icon
+                    name="person-circle-outline"
+                    class="icon"
+                  ></ion-icon>
+                  <span class="label username">Maria</span>
+                  <div class="active-item">
+                    <img src="imagens/check.svg" />
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="list visibily-list">
+              <p class="list-header">Escolha a visibilidade</p>
+              <ul class="list-items">
+                <li class="item">
+                  <ion-icon name="lock-open-sharp"></ion-icon>
+                  <span class="label">Público</span>
+                  <div class="active-item">
+                    <img src="imagens/check.svg" />
+                  </div>
+                </li>
+                <li class="item">
+                  <ion-icon name="lock-closed-sharp"></ion-icon>
+                  <span class="label">Privado</span>
+                  <div class="active-item">
+                    <img src="imagens/check.svg" />
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </aside>
     </div>
     <script
       type="module"
@@ -50,5 +108,6 @@
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
+    <script src="comand.js"></script>
   </body>
 </html>
