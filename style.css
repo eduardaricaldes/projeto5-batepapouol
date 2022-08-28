@@ -50,6 +50,9 @@ body {
   display: flex;
   flex-direction:column;
   overflow-y: scroll;
+  overflow-x: hidden;
+  margin-bottom: 80px;
+  padding-bottom:26px;
 }
 
 .chat .messages .message {
@@ -79,10 +82,7 @@ body {
   font-weight: bold;
 }
 
-.chat .messages .message.enter-room {
-  background-color: #DCDCDC;
-}
-.chat .messages .message.exit-room {
+.chat .messages .message.status {
   background-color: #DCDCDC;
 }
 
@@ -114,7 +114,7 @@ body {
   font-size: 18px;
   line-height: 21px;
   border: none;
-  flex-grow: 4;
+  flex-grow: 2;
 }
 
 .footer .write-text .message:focus {
