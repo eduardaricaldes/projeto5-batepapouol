@@ -13,9 +13,6 @@ body {
 .front{
   display: none;
 }
-.content {
-  display: flex;
-}
 
 .header{
   padding: 0 22px 0 22px;
@@ -43,31 +40,56 @@ body {
 }
 
 .main {
-  width: 100vw;
   margin-top: 80px;
+  padding-top: 26px;
 }
 
-.mensage {
+.chat .messages {
+  display: flex;
+  flex-direction:column;
+  overflow-y: scroll;
+}
+
+.chat .messages .message {
   background-color: antiquewhite;
-  min-height: 40px;
   height: auto;
-  margin-bottom:4px;
-  width: 100%;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  padding: 10px 10px;
   display: flex;
 }
 
-.enter-room {
-  background-color: #DCDCDC;
-
+.chat .messages .message p {
+  line-height: 20px;
 }
 
-.private {
+.chat .messages .message .message-user-from {
+  margin-left: 5px;
+}
+
+.chat .messages .message .message-time {
+  color: #AAAAAA;
+  margin-right: 5px;
+}
+
+.chat .messages .message .message-user{
+  font-weight: bold;
+}
+
+.chat .messages .message.enter-room {
+  background-color: #DCDCDC;
+}
+.chat .messages .message.exit-room {
+  background-color: #DCDCDC;
+}
+
+.chat .messages .message.private {
   background-color: #FFDEDE;
 }
 
-.write-text{
+.footer {
   background-color: brown;
-  width: 100vw;
   height: 80px;
   position: fixed;
   bottom: 0;
