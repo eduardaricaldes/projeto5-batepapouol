@@ -1,5 +1,6 @@
 body {
   font-size: 16px;
+  background-color: #F3F3F3;
 }
 
 .diplay-none {
@@ -16,7 +17,7 @@ body {
 
 .header{
   padding: 0 22px 0 22px;
-  background-color: brown;
+  background-color: #FFFFFF;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -26,6 +27,7 @@ body {
   left: 0;
   right: 0;
   height: 80px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 .header .img-logo{
@@ -89,12 +91,45 @@ body {
 }
 
 .footer {
-  background-color: brown;
+  background: #FFFFFF;
+  box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
   height: 80px;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
+  display: flex;
+  align-items: center;
+}
+
+
+.footer .write-text {
+  padding: 0 18px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footer .write-text .message {
+  font-size: 18px;
+  line-height: 21px;
+  border: none;
+  flex-grow: 4;
+}
+
+.footer .write-text .message:focus {
+  outline: none;
+}
+
+.footer .write-text .send-button {
+  float: right;
+  border: none;
+  background-color: transparent;
+  width: 35px;
+  height: 35px;
+}
+.footer .write-text .send-button img {
+  width: 100%;
 }
 
 /* NAV */
