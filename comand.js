@@ -100,7 +100,9 @@ function sendMessage() {
   });
   response.then(() => {
     messageElement.value = '';
-  })
+  }).catch(() => {
+    window.location.reload()
+  });
 }
 
 function app(){
