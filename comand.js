@@ -8,10 +8,10 @@ const statusLabel= 'status';
 
 
 
-function messageStatus(from, text, time) {
+function messageStatus(id, from, text, time) {
   const html = 
   `
-    <li class="message status">
+    <li class="message status" message-id=${id}>
       <p>
         <span class="message-time">(${time})</span>
         <span class="message-user">${from}</span>
@@ -22,14 +22,14 @@ function messageStatus(from, text, time) {
   return html;
 }
 
-function messageMessage(from, to, text, type, time) {
+function messageMessage(id, from, to, text, type, time) {
   let classType = '';
   if(type=== privateLabel){
     classType='private';
   }
   const html = 
   `
-    <li class="message ${classType}">
+    <li class="message ${classType}" message-id=${id}>
       <p>
         <span class="message-time">(${time})</span>
         <span class="message-user">${from}</span>
@@ -49,15 +49,18 @@ const messages= document.querySelector('.messages');
 function dadosChegaram(resposta){
   const data = resposta.data;
   let html = '';
-  for (let i =0; i<data.length;i++){
+  for (let i = 0; i<data.length;i++) {
     if (data[i].type===statusLabel){
-      html+=messageStatus(data[i].from,data[i].text,data[i].time);
+      html+=messageStatus(i,data[i].from,data[i].text,data[i].time);
     }else{
-      html+=messageMessage(data[i].from,data[i].to,data[i].text,data[i].type,data[i].time);
+      html+=messageMessage(i, data[i].from,data[i].to,data[i].text,data[i].type,data[i].time);
     }
   }
 
   messages.innerHTML = html;
+  const messagesOnBoard = document.querySelectorAll('.message');
+  const lastElement = messagesOnBoard[data.length-1];
+  lastElement.scrollIntoView();
 }
 
 function app(){
@@ -69,4 +72,4 @@ app();
 
 setInterval(()=>{
   app();
-}, 3000)
+}, 3000);
