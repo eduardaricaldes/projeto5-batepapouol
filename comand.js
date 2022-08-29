@@ -5,7 +5,8 @@
 const privateLabel='private_message';
 const messageLabel= 'message';
 const statusLabel= 'status';
-
+let username= '';
+let isUserOnline = false;
 
 
 function messageStatus(id, from, text, time) {
@@ -63,13 +64,46 @@ function dadosChegaram(resposta){
   lastElement.scrollIntoView();
 }
 
-function app(){
+function isOnline() {
+  axios.post('https://mock-api.driven.com.br/api/v6/uol/status', {
+    name: username,
+  });
+}
+
+function refreshChat() {
   const dados= axios.get('https://mock-api.driven.com.br/api/v6/uol/messages');
   dados.then(dadosChegaram);
 }
 
-app();
+function app(){
+  let response;
+  if(!isUserOnline){
+    const name= prompt('Qual o seu lindo nome?')
+    response= axios.post('https://mock-api.driven.com.br/api/v6/uol/participants', {
+      name: name,
+    });
+    response
+      .then((res) => {
+        username = name;
+        isUserOnline = true;
+        refreshChat();
+        app();
+      })
+      .catch(() => {
+        app();
+      });
+  }
+  
+  if(isUserOnline){
+    setInterval(()=>{
+      refreshChat();
+    }, 3000);
 
-setInterval(()=>{
-  app();
-}, 3000);
+    setInterval(()=>{
+      isOnline();
+    }, 5000);
+  }
+  
+}
+
+app();
