@@ -89,6 +89,20 @@ function refreshChat() {
   dados.then(filterMessagesUser);
 }
 
+function sendMessage() {
+  const messageElement = document.querySelector('.write-text .message');
+  const message = messageElement.value;
+  const response = axios.post('https://mock-api.driven.com.br/api/v6/uol/messages', {
+    from: username,
+    to: 'Todos',
+    text: message,
+    type: messageLabel,
+  });
+  response.then(() => {
+    messageElement.value = '';
+  })
+}
+
 function app(){
   let response;
   if(!isUserOnline){
