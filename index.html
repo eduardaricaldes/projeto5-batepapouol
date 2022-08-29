@@ -10,17 +10,14 @@
   </head>
   <body>
     <div class="container">
-      <div class="front">
-        <img src="imagens/logouol.svg" />
-        <button>Entrar</button>
-        <input type="text" />
-      </div>
       <div class="content">
         <div class="header">
           <div class="img-logo">
             <img src="imagens/logouol.svg" />
           </div>
-          <ion-icon name="people" class="people-icon"></ion-icon>
+          <div class="chat-list" onclick="openNavbar()">
+            <ion-icon name="people" class="people-icon"></ion-icon>
+          </div>
         </div>
         <div class="main">
           <article class="chat">
@@ -29,68 +26,75 @@
         </div>
         <div class="footer">
           <div class="write-text">
-            <input type="text" class="message" placeholder="Escreva aqui" />
-            <button class="send-button" onclick="send-text">
+            <input
+              type="text"
+              name="message"
+              class="message"
+              placeholder="Escreva aqui"
+            />
+            <button class="send-button" onclick="sendMessage()">
               <img src="imagens/send.svg" />
             </button>
           </div>
         </div>
       </div>
-      <aside class="navbar diplay-none">
-        <nav class="nav">
-          <div class="sidebar">
-            <div class="list contact-list">
-              <div class="list-header">
-                Escolha um contato para enviar mensagem:
+      <aside class="navbar" onclick="openNavbar()">
+        <div class="navbar-options">
+          <nav class="nav">
+            <div class="sidebar">
+              <div class="list contact-list">
+                <div class="list-header">
+                  Escolha um contato para enviar mensagem:
+                </div>
+                <div class="list-type">
+                  <ion-icon name="people-sharp" class="icon"></ion-icon>
+                  <span class="item-label">Todos</span>
+                </div>
+                <ul class="list-items">
+                  <li class="item">
+                    <ion-icon
+                      name="person-circle-outline"
+                      class="icon"
+                    ></ion-icon>
+                    <span class="label username">João</span>
+                    <div class="active-item">
+                      <img src="imagens/check.svg" />
+                    </div>
+                  </li>
+                  <li class="item">
+                    <ion-icon
+                      name="person-circle-outline"
+                      class="icon"
+                    ></ion-icon>
+                    <span class="label username">Maria</span>
+                    <div class="active-item">
+                      <img src="imagens/check.svg" />
+                    </div>
+                  </li>
+                </ul>
               </div>
-              <div class="list-type">
-                <ion-icon name="people-sharp" class="icon"></ion-icon>
-                <span class="item-label">Todos</span>
+              <div class="list visibily-list">
+                <p class="list-header">Escolha a visibilidade</p>
+                <ul class="list-items">
+                  <li class="item">
+                    <ion-icon name="lock-open-sharp"></ion-icon>
+                    <span class="label">Público</span>
+                    <div class="active-item">
+                      <img src="imagens/check.svg" />
+                    </div>
+                  </li>
+                  <li class="item">
+                    <ion-icon name="lock-closed-sharp"></ion-icon>
+                    <span class="label">Privado</span>
+                    <div class="active-item">
+                      <img src="imagens/check.svg" />
+                    </div>
+                  </li>
+                </ul>
               </div>
-              <ul class="list-items">
-                <li class="item">
-                  <ion-icon
-                    name="person-circle-outline"
-                    class="icon"
-                  ></ion-icon>
-                  <span class="label username">João</span>
-                  <div class="active-item">
-                    <img src="imagens/check.svg" />
-                  </div>
-                </li>
-                <li class="item">
-                  <ion-icon
-                    name="person-circle-outline"
-                    class="icon"
-                  ></ion-icon>
-                  <span class="label username">Maria</span>
-                  <div class="active-item">
-                    <img src="imagens/check.svg" />
-                  </div>
-                </li>
-              </ul>
             </div>
-            <div class="list visibily-list">
-              <p class="list-header">Escolha a visibilidade</p>
-              <ul class="list-items">
-                <li class="item">
-                  <ion-icon name="lock-open-sharp"></ion-icon>
-                  <span class="label">Público</span>
-                  <div class="active-item">
-                    <img src="imagens/check.svg" />
-                  </div>
-                </li>
-                <li class="item">
-                  <ion-icon name="lock-closed-sharp"></ion-icon>
-                  <span class="label">Privado</span>
-                  <div class="active-item">
-                    <img src="imagens/check.svg" />
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
+          </nav>
+        </div>
       </aside>
     </div>
     <script
