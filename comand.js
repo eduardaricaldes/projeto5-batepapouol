@@ -47,8 +47,7 @@ function messageMessage(id, from, to, text, type, time) {
 
 const messages= document.querySelector('.messages');
 
-function dadosChegaram(resposta){
-  const data = resposta.data;
+function dadosChegaram(data = []){
   let html = '';
   for (let i = 0; i<data.length;i++) {
     if (data[i].type===statusLabel){
@@ -70,9 +69,24 @@ function isOnline() {
   });
 }
 
+function filterMessagesUser(response){
+  const messages= response.data;
+  const filteredMessageUser= messages.filter((message)=>{
+    if (message.type===privateLabel){
+      if (message.from===username){
+        return message;
+      }
+    }else{
+      return message;
+    }
+  });
+
+  dadosChegaram(filteredMessageUser);
+}
+
 function refreshChat() {
   const dados= axios.get('https://mock-api.driven.com.br/api/v6/uol/messages');
-  dados.then(dadosChegaram);
+  dados.then(filterMessagesUser);
 }
 
 function app(){
