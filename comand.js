@@ -8,6 +8,10 @@ const statusLabel= 'status';
 let username= '';
 let isUserOnline = false;
 
+function openNavbar() {
+  const navbar = document.querySelector('.navbar');
+  navbar.classList.toggle('show');
+}
 
 function messageStatus(id, from, text, time) {
   const html = 
